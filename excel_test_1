@@ -1,0 +1,10 @@
+#-*- coding:utf-8 -*-
+from win32com.client import Dispatch
+
+def open_office_application(app_name,path):
+    app = Dispatch(app_name)
+    app.Visible = True
+    doc = app.WorkBooks.Open(path)
+
+if __name__ == '__main__':
+    open_office_application("Excel.Application","C:\\test.csv")
